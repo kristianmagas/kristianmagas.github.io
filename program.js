@@ -25,7 +25,7 @@ var Program = function(){
 				ShowDetailsPage(dummyMain.Datacontrol, id);
 				break;
 			case "profil objekta":
-			
+				ShowFacilityPage(dummyMain.Datacontrol, id);
 				break;
 			default:
 				ShowIndexPage(dummyMain.Datacontrol);

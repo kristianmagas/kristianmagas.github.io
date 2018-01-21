@@ -18,11 +18,11 @@ function ShowRegistrationPage(){
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="registration_password">Lozinka:</label>';
-	tmpHtml += '<input id="registration_password" type="text" class="form-control">';
+	tmpHtml += '<input id="registration_password" type="password" class="form-control">';
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="registration_confirmpass">Potvrda lozinke:</label>';
-	tmpHtml += '<input id="registration_confirmpass" type="text" class="form-control">';
+	tmpHtml += '<input id="registration_confirmpass" type="password" class="form-control">';
 	tmpHtml += '</div>';
 	tmpHtml += '<button type="button" class="btn btn-secondary" onclick="ShowLoginPage();" style="margin-right: 15px;">Prijava</button>';
 	tmpHtml += '<button type="button" class="btn btn-secondary" onclick="RegisterUser();">Registriraj se</button>';
@@ -44,9 +44,9 @@ function ShowLoginPage(){
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="login_password">Lozinka:</label>';
-	tmpHtml += '<input id="login_password" type="text" class="form-control">';
+	tmpHtml += '<input id="login_password" type="password" class="form-control">';
 	tmpHtml += '</div>';
-	tmpHtml += '<button type="button" class="btn btn-secondary">Prijava</button>';
+	tmpHtml += '<button type="button" class="btn btn-secondary" onclick="LoginUser();">Prijava</button>';
 	tmpHtml += '</div>';
     tmpHtml += '</div>';
 	
@@ -60,17 +60,34 @@ function RegisterUser(){
 	tmpUser.Password = $("#registration_password").val() == $("#registration_confirmpass").val() ? $("#registration_password").val() : $("#registration_password").val();
 	tmpUser.EMail = $("#registration_email").val();
 	tmpUser.Name = $("#registration_firstname").val();
-	tmpUser.LaseName = $("#registration_lastname").val();
+	tmpUser.LastName = $("#registration_lastname").val();
 	tmpUser.Tags = [];
 	tmpUser.Status = "user";
 	tmpUser.Description = "";
 	
 	if(tmpUser.Login.length > 0 && tmpUser.Password.length > 0){
-		mainProg.Datacontrol.RegisterUser(tmpUser);
-		
-		mainProg.Datacontrol.LogIn(tmpUser.Login, tmpUser.Password);
-		mainProg.GoToPage("profil");
+		if(mainProg.Datacontrol.GetUser(tmpUser.Login) != null){
+			alert("Korisnik je već registriran!");
+		}else{
+			mainProg.Datacontrol.RegisterUser(tmpUser);
+			
+			mainProg.Datacontrol.LogIn(tmpUser.Login, tmpUser.Password);
+			mainProg.GoToPage("profil");
+		}
 	}else{
 		alert("E-Mail i lozinka moraju biti ispunjeni!");
+	}
+}
+
+function LoginUser(){
+	var user = $("#login_email").val();
+	var pass = $("#login_password").val();
+	
+	mainProg.Datacontrol.LogIn(user, pass);
+	
+	if(mainProg.Datacontrol.IsLoggedIn()){
+		mainProg.GoToPage("index");
+	}else{
+		alert("E-Mail ili lozinka nisu ispravni!");
 	}
 }
