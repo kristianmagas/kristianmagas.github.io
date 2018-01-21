@@ -24,10 +24,14 @@ var DataControl = function(){
 		if($.grep(mainDS.UsersTable, function(x) { return x.Login == user && x.Password == pass}).length > 0){
 			document.cookie = "user=" + user;
 		}
+		
+		SetDropDownMenu();
 	};
 	
 	this.LogOut = function(){
 		document.cookie = "user=";
+		
+		SetDropDownMenu();
 	};
 	
 	this.IsLoggedIn = function(){
@@ -40,7 +44,28 @@ var DataControl = function(){
 			user = "";
 		}
 		
+		if(mainDS.UsersTable.length > 0){
+			user = mainDS.UsersTable[0].Login;
+		}
+		
 		return $.grep(mainDS.UsersTable, function(x) { return x.Login == user}).length > 0;
+	};
+	
+	this.GetLoggedInUser = function(){
+		var user = document.cookie.split(";");
+		
+		user = $.grep(user, function(x) { return x.trim().indexOf("user=") == 0; });
+		if(user.length > 0){
+			user = user[0].split("=")[1];
+		}else{
+			user = "";
+		}
+		
+		if(mainDS.UsersTable.length > 0){
+			user = mainDS.UsersTable[0].Login;
+		}
+		
+		return $.grep(mainDS.UsersTable, function(x) { return x.Login == user}).length > 0 ? $.grep(mainDS.UsersTable, function(x) { return x.Login == user})[0] : null;
 	};
 	
 	this.GetFacilities = function(){
