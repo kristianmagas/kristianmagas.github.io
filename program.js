@@ -5,7 +5,7 @@ var Program = function(){
 	this.GoToPage = function(page, id){
 		switch(page){
 			case "registracija":
-				if(dummyMain.Datacontrol.IsLoggendIn()){
+				if(dummyMain.Datacontrol.IsLoggedIn()){
 					ShowUserProfile();
 				}else{
 					ShowRegistrationPage();
