@@ -69,6 +69,7 @@ function RegisterUser(){
 		mainProg.Datacontrol.RegisterUser(tmpUser);
 		
 		mainProg.Datacontrol.LogIn(tmpUser.Login, tmpUser.Password);
+		mainProg.GoToPage("profil");
 	}else{
 		alert("E-Mail i lozinka moraju biti ispunjeni!");
 	}
