@@ -1,6 +1,7 @@
 var UserModel = (function(){
 	this.ID = "";
 	this.Login = "";
+	this.Password = "";
 	this.EMail = "";
 	this.Name = "";
 	this.LaseName = "";
@@ -15,6 +16,7 @@ var FacilityModel = function(){
 	this.Description = "";
 	this.OIB = "";
 	this.Tags = [];
+	this.GaleryID = null;
 };
 
 var PostModel = function(){
@@ -61,9 +63,19 @@ var GaleryModel = function(){
 }
 
 var ImageModel = function(){
-	this.ID 0 "";
+	this.ID = "";
 	this.GaleryID = null;
 	this.Name = "";
 	this.Path = "";
 	this.Description = "";
+}
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
 }
