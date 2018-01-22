@@ -26,15 +26,49 @@
 	.logo-container{
 		margin: 0px;
 	}
+	
+	.bodyStyle, .bodyStyle .card, .bodyStyle .card-header{
+		border-color: #3f3f3f;
+		background-color: #3f3f3f;
+		color: white;
+	}
+	
+	.bodyStyle input, .bodyStyle textarea, .bodyStyle .btn{
+		border-color: white;
+		background-color: #3f3f3f;
+		color: white;
+	}
 	</style>
 
   </head>
 
-  <body>
+  <body class="bodyStyle"
+>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container logo-container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+		<div style="max-width: 60px; float: left;">
+			<div class="dropdown">
+			  <img src="covjeculjak.png" class= "dropdown-toggle" style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				
+			  <div id="mainDDMenu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+				<button class="dropdown-item" href="#">Prijava</button>
+				<button class="dropdown-item" href="#">Registracija</button>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="text-center" style="width: 100%; color: black;">
+			<div style="cursor: pointer;" onclick="mainProg.GoToPage('index');">
+			Kud' na kavu 
+			<img src="kava.png"/>
+			</div>
+		</div>
+		
+		<div style="max-width:200px; float: right;">
+			<input class="form-control form-control-sm" type="text" placeholder="Search..." />
+		</div>
+      <!--<div class="container logo-container">
         <a class="navbar-brand" href="#" onclick="mainProg.GoToPage('index'); return false;">Kud' na kavu</a>
       </div>
 	  
@@ -49,7 +83,7 @@
 			</span>
 		  </div>
 			<div class="dropdown">
-			  <img src="User.png" class= "dropdown-toggle" style="width: 38px; height: 38px; cursor: pointer; margin-left:5px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  <img src="covjeculjak.png" class= "dropdown-toggle" style="width: 38px; height: 38px; cursor: pointer; margin-left:5px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				
 			  <div id="mainDDMenu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" style="left:auto; right: 0;">
 				<button class="dropdown-item" href="#">Prijava</button>
@@ -57,7 +91,7 @@
 			  </div>
 			</div>
 		  
-        </div>
+        </div>-->
     </nav>
 
     <!-- Page Content -->

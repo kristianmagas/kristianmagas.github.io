@@ -1,8 +1,8 @@
 function ShowFacilityPage(datacontrol, id){
-	$("#mainContent").html(getHtml(datacontrol.GetFacility(id)));
+	$("#mainContent").html(getFacilityHtml(datacontrol.GetFacility(id)));
 }
 
-function getHtml(facility){
+function getFacilityHtml(facility){
 	var retVal = "";
 	retVal += '<div class="row">';
 	retVal += '<div class="col-lg-12" style="padding: 15px;">';

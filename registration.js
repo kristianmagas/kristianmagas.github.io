@@ -6,25 +6,25 @@ function ShowRegistrationPage(){
 	
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="registration_firstname">Ime:</label>';
-	tmpHtml += '<input id="registration_firstname" type="text" class="form-control">';
+	tmpHtml += '<input id="registration_firstname" type="text" class="form-control text-center">';
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="registration_lastname">Prezime:</label>';
-	tmpHtml += '<input id="registration_lastname" type="text" class="form-control">';
+	tmpHtml += '<input id="registration_lastname" type="text" class="form-control text-center">';
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="registration_email">E-Mail:</label>';
-	tmpHtml += '<input id="registration_email" type="text" class="form-control">';
+	tmpHtml += '<input id="registration_email" type="text" class="form-control text-center">';
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="registration_password">Lozinka:</label>';
-	tmpHtml += '<input id="registration_password" type="password" class="form-control">';
+	tmpHtml += '<input id="registration_password" type="password" class="form-control text-center">';
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="registration_confirmpass">Potvrda lozinke:</label>';
-	tmpHtml += '<input id="registration_confirmpass" type="password" class="form-control">';
+	tmpHtml += '<input id="registration_confirmpass" type="password" class="form-control text-center">';
 	tmpHtml += '</div>';
-	tmpHtml += '<button type="button" class="btn btn-secondary" onclick="ShowLoginPage();" style="margin-right: 15px;">Prijava</button>';
+	//tmpHtml += '<button type="button" class="btn btn-secondary" onclick="ShowLoginPage();" style="margin-right: 15px;">Prijava</button>';
 	tmpHtml += '<button type="button" class="btn btn-secondary" onclick="RegisterUser();">Registriraj se</button>';
 	
 	tmpHtml += '</div>';

@@ -4,7 +4,7 @@ function ShowIndexPage(datacontrol){
 	
 	tmpHtml = "<div class='row'>";
 	for(var i = 0; i < fac.length; i++){
-		tmpHtml += getFacilityHtml(fac[i]);
+		tmpHtml += getIndexHtml(fac[i]);
 		if(i%2 == 1){
 			tmpHtml+="</div><div class='row'>";
 		}
@@ -14,7 +14,7 @@ function ShowIndexPage(datacontrol){
 	$("#mainContent").html(tmpHtml);
 }
 
-function getFacilityHtml(facility){
+function getIndexHtml(facility){
 	var retVal = '<div class="col-lg-6" style="padding: 15px; cursor: pointer;" onclick="mainProg.GoToPage(\'objekt\', \'' + facility.ID + '\');">';
 	retVal += '<div class="card">';
 	retVal += '<div class="card-header">';
@@ -23,7 +23,7 @@ function getFacilityHtml(facility){
 	retVal += '<div class="card-block">';
 	retVal += '<img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">';
 				
-	retVal += '<p>' + facility.Description + '</p>';
+	retVal += '<p style="max-height: 150px; overflow-y: hidden;">' + facility.Description + '</p>';
 	retVal += '</div>';
 	retVal += '</div>';
 	retVal += '</div>';
