@@ -1,6 +1,19 @@
-function ShowIndexPage(datacontrol){
+function ShowIndexPage(datacontrol, searchValue){
 	var tmpHtml = "";
 	var fac = datacontrol.GetFacilities();
+	
+	if(searchValue != undefined && searchValue != null && searchValue.length > 0){
+		fac = $.grep(fac, function(x) { 
+		
+		//if(searchValue.indexOf(" ") > -1){
+		//	return $.grep(searchValue.split(" "), function(y){
+		//		return x.Name.toLowerCase().indexOf(y.toLowerCase()) > -1 || x.Description.toLowerCase().indexOf(y.toLowerCase()) > -1; 
+		//	}).length > 0; 
+		//}else{
+			return x.Name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 || x.Description.toLowerCase().indexOf(searchValue.toLowerCase()) > -1; 
+		//}
+		});
+	}
 	
 	tmpHtml = "<div class='row'>";
 	for(var i = 0; i < fac.length; i++){

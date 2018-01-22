@@ -13,7 +13,10 @@ function getUserProfile(){
 	retVal += '<div class="row" style="margin-top: 15px;">';
 	
 	retVal += '<div class="col-lg-3">';
+	retVal += '<label>';
 	retVal += '<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">';
+	retVal += '<input type="file" style="display:none;" />';
+	retVal += '</label>';
 	retVal += '</div>';
 	
 	retVal += '<div class="col-lg-9">';

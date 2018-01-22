@@ -50,7 +50,7 @@ var ReservationModel = function(){
 
 var ReviewModel = function(){
 	this.ID = "";
-	this.UserID = null;
+	this.User = "";
 	this.FacilityID = null;
 	this.Text = "";
 	this.Score = 0;

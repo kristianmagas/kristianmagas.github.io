@@ -44,6 +44,10 @@ var DataControl = function(){
 			user = "";
 		}
 		
+		if(mainDS.UsersTable.length > 0){
+			user = mainDS.UsersTable[0].Login;
+		}
+		
 		return $.grep(mainDS.UsersTable, function(x) { return x.Login == user}).length > 0;
 	};
 	
@@ -57,6 +61,9 @@ var DataControl = function(){
 			user = "";
 		}
 		
+		if(mainDS.UsersTable.length > 0){
+			user = mainDS.UsersTable[0].Login;
+		}
 		
 		return $.grep(mainDS.UsersTable, function(x) { return x.Login == user}).length > 0 ? $.grep(mainDS.UsersTable, function(x) { return x.Login == user})[0] : null;
 	};
@@ -80,4 +87,16 @@ var DataControl = function(){
 	this.RegisterFacility = function(facility){
 		mainDS.FacilityTable.push(facility);
 	};
+	
+	this.AddReview = function(review){
+		mainDS.ReviewsTable.push(review);
+	};
+	
+	this.GetReviews = function(facilityID){
+		if($.grep(mainDS.ReviewsTable, function(x) { return x.FacilityID == facilityID; }).length > 0){
+			return $.grep(mainDS.ReviewsTable, function(x) { return x.FacilityID == facilityID; });
+		}else{
+			return null;
+		}
+	}
 }

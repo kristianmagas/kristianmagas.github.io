@@ -70,3 +70,4 @@ function fillFacilites(datacontrol){
 	
 	datacontrol.RegisterFacility(tmpFac);
 }
+

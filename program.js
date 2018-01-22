@@ -28,7 +28,7 @@ var Program = function(){
 				ShowFacilityPage(dummyMain.Datacontrol, id);
 				break;
 			default:
-				ShowIndexPage(dummyMain.Datacontrol);
+				ShowIndexPage(dummyMain.Datacontrol, id);
 				break;
 		}
 		

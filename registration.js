@@ -40,11 +40,11 @@ function ShowLoginPage(){
 	tmpHtml += '<div class="col-lg-12 text-center" style="padding: 15px;">';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="login_email">E-Mail:</label>';
-	tmpHtml += '<input id="login_email" type="text" class="form-control">';
+	tmpHtml += '<input id="login_email" type="text" class="form-control text-center">';
 	tmpHtml += '</div>';
 	tmpHtml += '<div class="form-group">';
 	tmpHtml += '<label for="login_password">Lozinka:</label>';
-	tmpHtml += '<input id="login_password" type="password" class="form-control">';
+	tmpHtml += '<input id="login_password" type="password" class="form-control text-center">';
 	tmpHtml += '</div>';
 	tmpHtml += '<button type="button" class="btn btn-secondary" onclick="LoginUser();">Prijava</button>';
 	tmpHtml += '</div>';

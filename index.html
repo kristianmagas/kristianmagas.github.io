@@ -59,14 +59,14 @@
 		</div>
 		
 		<div class="text-center" style="width: 100%; color: black;">
-			<div style="cursor: pointer;" onclick="mainProg.GoToPage('index');">
+			<div style="cursor: pointer; display: inline-block;" onclick="mainProg.GoToPage('index');">
 			Kud' na kavu 
 			<img src="kava.png" style="width: 38px; height: 38px;"/>
 			</div>
 		</div>
 		
 		<div style="max-width:200px; float: right;">
-			<input class="form-control form-control-sm" type="text" placeholder="Search..." />
+			<input class="form-control form-control-sm" type="text" placeholder="Traži..." onkeyup="Search($(this).val());" />
 		</div>
       <!--<div class="container logo-container">
         <a class="navbar-brand" href="#" onclick="mainProg.GoToPage('index'); return false;">Kud' na kavu</a>
@@ -241,6 +241,10 @@
 			}
 			
 			$("#mainDDMenu").html(tmpHtml);
+		}
+		
+		function Search(value){
+			ShowIndexPage(mainProg.Datacontrol, value);
 		}
 		
 		$(document).ready(function(x){
